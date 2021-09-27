@@ -1,51 +1,68 @@
 <template>
   <v-app>
     <v-main>
-      <v-container class="fill-height" fluid>
+      <v-container fluid>
         <v-row align="center" justify="center">
           <v-col cols="12" sm="8" md="4" lg="4">
-            <v-card raised elevation="10" light>
-              <v-container >
-                <validation-observer ref="observer" v-slot="{ invalid }">
-                  <form @submit.prevent="submit">
-                    <validation-provider
-                      v-slot="{ errors }"
-                      name="User"
-                      rules="required"
-                    >
-                      <v-text-field
-                        v-model="name"
-                        :error-messages="errors"
-                        label="User"
-                        required
-                      ></v-text-field>
-                    </validation-provider>
-                    <validation-provider
-                      v-slot="{ errors }"
-                      name="Password"
-                      rules="required|min:8"
-                    >
-                      <v-text-field
-                        v-model="password"
-                        type="password"
-                        :counter="8"
-                        :error-messages="errors"
-                        label="Password"
-                        required
-                      ></v-text-field>
-                    </validation-provider>
-                    <v-row justify="center" align="center">
-
-                    <v-btn class="mr-4" elevation="5" type="submit" :disabled="invalid">
-                      submit
-                    </v-btn>
-                    <v-btn @click="clear" elevation="5"> clear </v-btn>
-                    </v-row>
-                    
-                  </form>
-                </validation-observer>
-              </v-container>
-            </v-card>
+            <v-container>
+              <v-row justify="center" align="center">
+                <v-card elevation="10" light min-width="80%" height="300px">
+                  <validation-observer ref="observer" v-slot="{ invalid }">
+                    <form @submit.prevent="submit">
+                      <validation-provider
+                        v-slot="{ errors }"
+                        name="User"
+                        rules="required"
+                      >
+                        <v-col cols="12">
+                          <v-text-field
+                            v-model="name"
+                            :error-messages="errors"
+                            label="User"
+                            required
+                          >
+                          </v-text-field>
+                        </v-col>
+                      </validation-provider>
+                      <validation-provider
+                        v-slot="{ errors }"
+                        name="Password"
+                        rules="required|min:8"
+                      >
+                        <v-col>
+                          <v-text-field
+                            v-model="password"
+                            type="password"
+                            :counter="8"
+                            :error-messages="errors"
+                            label="Password"
+                            required
+                            ><v-icon>mdi-account</v-icon>
+                          </v-text-field>
+                        </v-col>
+                      </validation-provider>
+                      <v-col cols="12">
+                        <v-spacer></v-spacer>
+                      </v-col>
+                      <v-row justify="center" align="center">
+                        <v-col cols="12" sm="8" md="4" lg="4">
+                          <v-btn
+                            rounded
+                            large
+                            color="#0071ce"
+                            elevation="10"
+                            type="submit"
+                            :disabled="invalid"
+                          >
+                            Log In
+                          </v-btn>
+                        </v-col>
+                      </v-row>
+                    </form>
+                  </validation-observer>
+                </v-card>
+              </v-row>
+            </v-container>
           </v-col>
         </v-row>
       </v-container>
@@ -76,7 +93,7 @@ extend("required", {
 
 extend("min", {
   ...min,
-  message: "{_field_} may not be less than {length} characters",
+  message: "{_field_} must contain at least {length} characters",
 });
 
 extend("regex", {
@@ -107,4 +124,16 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+form {
+  min-width: 100%;
+  height: 50px !important;
+  line-height: 50px !important;
+  background: #fff !important;
+  color: #0071ce !important;
+  border: none !important;
+  border-radius: 0 !important;
+  margin-bottom: 5px;
+  margin-right: 2px;
+}
+</style>
