@@ -2,6 +2,7 @@
   <v-app>
     <v-main>
       <v-container fluid>
+
         <v-row align="center" justify="center">
           <v-col cols="12" sm="8" md="4" lg="4">
             <v-container>

@@ -2,16 +2,27 @@
   <v-container>
     <v-app-bar id="headerBar" app extended>
       <v-row align="center" justify="center">
-        <v-app-bar-title>
-          <h2>Gestion de Clientes</h2>
-        </v-app-bar-title>
+        <v-col cols="4">
+          <v-img :src="{ logoMacena }"></v-img>
+        </v-col>
+        <v-col cols="8">
+          <v-app-bar-title>
+            <h2>Gestion de Clientes</h2>
+          </v-app-bar-title>
+        </v-col>
       </v-row>
     </v-app-bar>
   </v-container>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      logoMacena: require("../assets/macena.png"),
+    };
+  },
+};
 </script>
 
 <style>

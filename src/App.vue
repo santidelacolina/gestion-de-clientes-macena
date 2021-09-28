@@ -17,12 +17,15 @@ export default {
   components: { ElHeader },
 
   data: () => ({
+    
     //
   }),
 };
 </script>
 <style>
 #app {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
+  background-color: #36292924 ;
+  background-size: contain;
 }
 </style>
