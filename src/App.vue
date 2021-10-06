@@ -3,9 +3,8 @@
     <header>
       <el-header></el-header>
     </header>
-
-    <v-main>
-      <router-view />
+    <v-main class="container">
+      <router-view class="router-view" />
     </v-main>
   </v-app>
 </template>
@@ -17,7 +16,6 @@ export default {
   components: { ElHeader },
 
   data: () => ({
-    
     //
   }),
 };
@@ -25,7 +23,10 @@ export default {
 <style>
 #app {
   font-family: "Lato", sans-serif;
-  background-color: #36292924 ;
-  background-size: contain;
+  height: 50%;
+  /* background-color: rgba(0, 0, 0, 0.157) transparent; */
+  /* background-image: url("https://strapiprovider.s3.us-east-2.amazonaws.com/Macena_65efa93b55.jpg");
+  background-repeat: no-repeat;
+  background-position: top; */
 }
 </style>
