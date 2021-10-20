@@ -45,16 +45,18 @@
                     <v-container fluid>
                       <v-row justify="center">
                         <v-col cols="5">
-                          <v-btn
-                            rounded
-                            large
-                            color="#0071ce"
-                            elevation="10"
-                            type="submit"
-                            :disabled="invalid"
-                          >
-                            Log In
-                          </v-btn>
+                          <router-link to="licencias-clientes">
+                            <v-btn
+                              rounded
+                              large
+                              color="#0071ce"
+                              elevation="10"
+                              type="submit"
+                              :disabled="invalid"
+                            >
+                              Log In
+                            </v-btn>
+                          </router-link>
                         </v-col>
                       </v-row>
                     </v-container>

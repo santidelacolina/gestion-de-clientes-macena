@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 // import Home from "../views/Home.vue";
 import LoginCard from "../components/LoginCard";
-import ElHeader from "../components/ElHeader";
+import LicenciasClientes from "../components/LicenciasClientes";
 
 Vue.use(VueRouter);
 
@@ -13,9 +13,9 @@ const routes = [
     component: LoginCard,
   },
   {
-    path: "/header",
-    name: "ElHeader",
-    component: ElHeader,
+    path: "/licencias-clientes",
+    name: "LicenciasClientes",
+    component: LicenciasClientes,
   },
 ];
 
